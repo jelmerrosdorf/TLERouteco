@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; 
-import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 
@@ -18,7 +17,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName='Gallery'
+      initialRouteName='Login'
       >
         <Stack.Screen
         name='Camera'
@@ -31,6 +30,18 @@ export default function App() {
          <Stack.Screen
         name='ViewImage'
         component = {ViewImage}
+        />
+        <Stack.Screen
+        name='Register'
+        component = {Register}
+        />
+        <Stack.Screen
+        name='Login'
+        component = {Login}
+        />
+        <Stack.Screen
+        name='EditAccount'
+        component = {EditAccount}
         />
       </Stack.Navigator>
     </NavigationContainer>
