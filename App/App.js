@@ -1,9 +1,13 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack'; 
-import { StatusBar } from 'expo-status-bar';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+
+import EditAccount from './Screens/editAccountScreen';
+import Login from './Screens/loginScreen';
+import Register from './Screens/registerScreen';
 import { Camera } from './Screens/Camera';
 import { Gallery } from './Screens/Gallery';
 import {ViewImage} from './Screens/ViewImage';
@@ -32,7 +36,7 @@ export default function App() {
     </NavigationContainer>
    
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
