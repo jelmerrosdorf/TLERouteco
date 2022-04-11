@@ -25,6 +25,27 @@ export const Camera = ({navigation, route}) =>{
                     go to gallery
                 </Text>
             </TouchableOpacity>
+            <TouchableOpacity
+                onPress={()=>{
+                    navigation.navigate('Login')
+                }}
+                style={{
+                    height:50,
+                    width:'70%',
+                    alignSelf: "center",
+                    backgroundColor:"green",
+                    justifyContent:"center"
+                }}
+                >
+                <Text
+                style={{
+                    alignSelf:"center",
+                    color:"white"
+                }}
+                >
+                    go to Login
+                </Text>
+            </TouchableOpacity>
         </View>
     )
 

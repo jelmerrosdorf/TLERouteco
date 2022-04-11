@@ -2,17 +2,19 @@ import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
 const Register = ({navigation}) =>{  return (
-    <View
-    style={{
-      height:50,
-      width:'70%',
-      alignSelf: "center",
-      backgroundColor:"green",
-      justifyContent:"center"
-  }}>
-      <Text>RoutEco</Text>
+    <View>
+      <Text
+      style={{
+        fontSize:30,
+        alignSelf: "center"
+      }}
+      >RoutEco</Text>
       <View>
-        <Text>Register</Text>
+        <Text
+        style={{
+          alignSelf: "center"
+        }}
+        >Create a new account</Text>
       </View>
       <TextInput
         style={{
@@ -20,24 +22,46 @@ const Register = ({navigation}) =>{  return (
           borderColor: 'gray',
           borderWidth: 1
         }}
-        defaultValue="Name"
-      />
+        placeholder={"Name"}
+        />
       <TextInput
         style={{
           height: 40,
           borderColor: 'gray',
           borderWidth: 1
         }}
-        defaultValue="Email"
-      />
+        placeholder={"Email"}
+        />
       <TextInput
         style={{
           height: 40,
           borderColor: 'gray',
+          
           borderWidth: 1
         }}
-        defaultValue="Password"
-      />
+        placeholder={"Password"}
+        />
+            <TouchableOpacity
+                onPress={()=>{
+                    navigation.navigate('Login')
+                }}
+                style={{
+                    height:50,
+                    width:'70%',
+                    alignSelf: "center",
+                    backgroundColor:"green",
+                    justifyContent:"center"
+                  }}
+                >
+                <Text
+                style={{
+                  alignSelf:"center",
+                  color:"white"
+                }}
+                >
+                    go to Login
+                </Text>
+            </TouchableOpacity>
                   <TouchableOpacity
                 onPress={()=>{
                     navigation.navigate('EditAccount')
@@ -57,27 +81,6 @@ const Register = ({navigation}) =>{  return (
                 }}
                 >
                     go to account
-                </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={()=>{
-                    navigation.navigate('Login')
-                }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
-                >
-                <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
-                >
-                    go to Login
                 </Text>
             </TouchableOpacity>
     </View>

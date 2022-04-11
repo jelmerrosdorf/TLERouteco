@@ -2,17 +2,19 @@ import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 
 const EditAccount = ({navigation}) =>{  return (
-    <View
-    style={{
-      height:50,
-      width:'70%',
-      alignSelf: "center",
-      backgroundColor:"green",
-      justifyContent:"center"
-  }}>
-      <Text>RoutEco</Text>
+    <View>
+      <Text
+      style={{
+        fontSize:30,
+        alignSelf: "center"
+      }}
+      >RoutEco</Text>
       <View>
-        <Text>Edit your account</Text>
+        <Text
+        style={{
+          alignSelf: "center"
+        }}
+        >Edit your information</Text>
       </View>
       <TextInput
         style={{
@@ -20,24 +22,25 @@ const EditAccount = ({navigation}) =>{  return (
           borderColor: 'gray',
           borderWidth: 1
         }}
-        defaultValue="Name"
-      />
+        placeholder={"Name"}
+        />
       <TextInput
         style={{
           height: 40,
           borderColor: 'gray',
           borderWidth: 1
         }}
-        defaultValue="Email"
-      />
+        placeholder={"Email"}
+        />
       <TextInput
         style={{
           height: 40,
           borderColor: 'gray',
+          
           borderWidth: 1
         }}
-        defaultValue="Password"
-      />
+        placeholder={"Password"}
+        />
       <TouchableOpacity
                 onPress={()=>{
                     navigation.navigate('Login')
