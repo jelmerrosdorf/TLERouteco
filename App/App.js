@@ -10,7 +10,7 @@ import { Image1 } from './Screens/Image1';
 import { Image2 } from './Screens/Image2';
 import { Image3 } from './Screens/Image3';
 import { Image4 } from './Screens/Image4';
-
+import {ViewImage} from './Screens/ViewImage';
 
 const Stack = createStackNavigator();
 
@@ -43,6 +43,10 @@ export default function App() {
         <Stack.Screen
         name='Image4'
         component = {Image4}
+        />
+         <Stack.Screen
+        name='ViewImage'
+        component = {ViewImage}
         />
       </Stack.Navigator>
     </NavigationContainer>
