@@ -1,32 +1,28 @@
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image} from 'react-native';
 // import React, { useState, useEffect, Component} from 'react';
-const imageArray = [
-    {id: 1, source: require('../Includes/Images/leaf1.jpeg')},
-    {id:2, source: require('../Includes/Images/leaf2.jpg')},
-    {id:3, source: require('../Includes/Images/leaf3.jpg')},
-    {id:4, source: require('../Includes/Images/leaf3.jpg')}
-]
 const windowWidth = Dimensions.get('window').windowWidth;
-    
+
 
 export const Gallery = ({navigation, route}) =>{
-
-const imageView = imageArray.map((image)=>
-<TouchableOpacity 
-    key={image.id.toString()}
+    let  images;
+    images = require('../Includes/ImageList')
+    
+    const imageView = images.map((item)=>
+    <TouchableOpacity 
+    key={item.id}
     onPress={()=>{
-        navigation.navigate('Image'+ image.id.toString())
+        navigation.navigate('ViewImage',{ imageId: item.id})
     }}
     > 
     <Image
-    source={image.source}
+    source={item.source}
     style={{
-        flex: image.id,
+        flex: item.id,
         flexGrow: 1,
         flexShrink: 0,
         flexBasis: 100,
         width:110,
-        margin:20
+        margin:30
     }}
     />
 </TouchableOpacity>
@@ -61,7 +57,8 @@ const imageView = imageArray.map((image)=>
                 // Try setting `flexDirection` to `"row"`.
                 flexDirection: "row",
                 flexWrap: "wrap",
-                justifyContent:"space-around",
+                justifyContent:"space-between",
+                // alignContent: "space-between"
                 // padding: 20
               }}
             >
