@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, Dimensions, Image} from 'react-native';
+import { MainStyles } from '../Styles/MainStyles';
 // import React, { useState, useEffect, Component} from 'react';
 const windowWidth = Dimensions.get('window').windowWidth;
 
@@ -35,31 +36,19 @@ export const Gallery = ({navigation, route}) =>{
                 onPress={()=>{
                     navigation.navigate('Camera')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to camera
                 </Text>
             </TouchableOpacity>
             <View 
              style={{
-                // Try setting `flexDirection` to `"row"`.
                 flexDirection: "row",
                 flexWrap: "wrap",
                 justifyContent:"space-between",
-                // alignContent: "space-between"
-                // padding: 20
               }}
             >
             {imageView}

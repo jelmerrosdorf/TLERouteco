@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { MainStyles } from '../Styles/MainStyles';
 
 export const Camera = ({navigation, route}) =>{
     return(
@@ -8,19 +9,10 @@ export const Camera = ({navigation, route}) =>{
                 onPress={()=>{
                     navigation.navigate('Gallery')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to gallery
                 </Text>
@@ -29,19 +21,10 @@ export const Camera = ({navigation, route}) =>{
                 onPress={()=>{
                     navigation.navigate('Login')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to Login
                 </Text>

@@ -1,15 +1,13 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { MainStyles } from '../Styles/MainStyles';
 
 const Login = ({navigation}) =>{  return (
       <View>
 
       <View>
       <Text
-      style={{
-        fontSize:30,
-        alignSelf: "center"
-      }}
+      style={MainStyles.title}
       >RoutEco</Text>
       <View>
         <Text
@@ -21,20 +19,11 @@ const Login = ({navigation}) =>{  return (
       <View>
 
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
+        style={MainStyles.TextInputBox}
         placeholder={"Email"}
         />
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          
-          borderWidth: 1
-        }}
+        style={MainStyles.TextInputBox}
         placeholder={"Password"}
         />
         </View>
@@ -42,19 +31,10 @@ const Login = ({navigation}) =>{  return (
                 onPress={()=>{
                   navigation.navigate('EditAccount')
                 }}
-                style={{
-                  height:50,
-                  width:'70%',
-                  alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                  }}
+                style={MainStyles.button}
                   >
                 <Text
-                style={{
-                  alignSelf:"center",
-                  color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to account
                 </Text>
@@ -63,19 +43,10 @@ const Login = ({navigation}) =>{  return (
                 onPress={()=>{
                   navigation.navigate('Register')
                 }}
-                style={{
-                  height:50,
-                  width:'70%',
-                  alignSelf: "center",
-                  backgroundColor:"green",
-                    justifyContent:"center"
-                  }}
+                style={MainStyles.button}
                   >
                 <Text
-                style={{
-                  alignSelf:"center",
-                  color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to Register
                 </Text>
@@ -84,19 +55,10 @@ const Login = ({navigation}) =>{  return (
                 onPress={()=>{
                   navigation.navigate('Camera')
                 }}
-                style={{
-                  height:50,
-                  width:'70%',
-                  alignSelf: "center",
-                  backgroundColor:"green",
-                  justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                  alignSelf:"center",
-                  color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to Camera
                 </Text>

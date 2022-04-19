@@ -1,13 +1,11 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { MainStyles } from '../Styles/MainStyles';
 
 const Register = ({navigation}) =>{  return (
     <View>
       <Text
-      style={{
-        fontSize:30,
-        alignSelf: "center"
-      }}
+      style={MainStyles.TextInputBox}
       >RoutEco</Text>
       <View>
         <Text
@@ -17,47 +15,25 @@ const Register = ({navigation}) =>{  return (
         >Create a new account</Text>
       </View>
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
+        style={MainStyles.TextInputBox}
         placeholder={"Name"}
         />
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
+        style={MainStyles.TextInputBox}
         placeholder={"Email"}
         />
       <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          
-          borderWidth: 1
-        }}
+        style={MainStyles.TextInputBox}
         placeholder={"Password"}
         />
             <TouchableOpacity
                 onPress={()=>{
                     navigation.navigate('Login')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                  }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                  alignSelf:"center",
-                  color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to Login
                 </Text>
@@ -66,19 +42,10 @@ const Register = ({navigation}) =>{  return (
                 onPress={()=>{
                     navigation.navigate('EditAccount')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go to account
                 </Text>

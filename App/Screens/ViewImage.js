@@ -1,4 +1,5 @@
 import { Text, View, TouchableOpacity, Dimensions, Image} from 'react-native';
+import { MainStyles } from '../Styles/MainStyles';
 
 
 export const ViewImage = ({navigation, route}) =>{
@@ -18,19 +19,10 @@ export const ViewImage = ({navigation, route}) =>{
                 onPress={()=>{
                     navigation.navigate('Gallery')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
                     go back to gallery
                 </Text>
