@@ -1,19 +1,17 @@
 import React from 'react';
-import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, Image, ScrollView, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { MainStyles } from '../Styles/MainStyles';
-
+import { StyleVar } from '../Styles/MainStyles';
 const Login = ({navigation}) =>{  return (
-      <View>
-
+      <View style={MainStyles.container}>
+        <ImageBackground source={require("../Includes/Images/leaf1.jpeg")} resizeMode="cover"  style={MainStyles.imageBackground}>
       <View>
       <Text
       style={MainStyles.title}
       >RoutEco</Text>
       <View>
         <Text
-        style={{
-          alignSelf: "center"
-        }}
+        style={MainStyles.buttonText}
         >Login to your account</Text>
       </View>
       <View>
@@ -32,7 +30,7 @@ const Login = ({navigation}) =>{  return (
                   navigation.navigate('EditAccount')
                 }}
                 style={MainStyles.button}
-                  >
+                >
                 <Text
                 style={MainStyles.buttonText}
                 >
@@ -44,7 +42,7 @@ const Login = ({navigation}) =>{  return (
                   navigation.navigate('Register')
                 }}
                 style={MainStyles.button}
-                  >
+                >
                 <Text
                 style={MainStyles.buttonText}
                 >
@@ -53,7 +51,7 @@ const Login = ({navigation}) =>{  return (
             </TouchableOpacity>
             <TouchableOpacity
                 onPress={()=>{
-                  navigation.navigate('Camera')
+                  navigation.navigate('CameraScreen')
                 }}
                 style={MainStyles.button}
                 >
@@ -63,7 +61,8 @@ const Login = ({navigation}) =>{  return (
                     go to Camera
                 </Text>
             </TouchableOpacity>
-    </View>
+         </View>
+      </ImageBackground>
   </View>
   );
 }
