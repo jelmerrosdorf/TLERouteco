@@ -10,6 +10,7 @@ import Register from './Screens/registerScreen';
 import { CameraScreen } from './Screens/CameraScreen';
 import { Gallery } from './Screens/Gallery';
 import {ViewImage} from './Screens/ViewImage';
+import Map from './Screens/Map';
 
 const Stack = createStackNavigator();
 
@@ -42,6 +43,10 @@ export default function App() {
         <Stack.Screen
         name='EditAccount'
         component = {EditAccount}
+        />
+       <Stack.Screen
+        name='Map'
+        component = {Map}
         />
         
       </Stack.Navigator>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, TouchableOpacity, ImageBackground } from 'react-native';
 import { MainStyles } from '../Styles/MainStyles';
-import { StyleVar } from '../Styles/MainStyles';
+
 const Login = ({navigation}) =>{  return (
       <View style={MainStyles.container}>
         <ImageBackground source={require("../Includes/Images/leaf1.jpeg")} resizeMode="cover"  style={MainStyles.imageBackground}>
@@ -59,6 +59,18 @@ const Login = ({navigation}) =>{  return (
                 style={MainStyles.buttonText}
                 >
                     go to Camera
+                </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={()=>{
+                  navigation.navigate('Map')
+                }}
+                style={MainStyles.button}
+                >
+                <Text
+                style={MainStyles.buttonText}
+                >
+                    go to map
                 </Text>
             </TouchableOpacity>
          </View>
