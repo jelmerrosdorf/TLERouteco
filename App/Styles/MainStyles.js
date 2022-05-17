@@ -2,15 +2,19 @@ import react from "react"
 import reactDom from "react-dom"
 import { StyleSheet } from "react-native"
 
-//export the style varibles seperate from the stylesheet? or as an array?
-// export const StyleVar = 
-// export const placeholderEmail = "Email"
-// export const placeholderPassword = "Password"
-// export const placeholderName = "Name"
+// export the style varibles seperate from the stylesheet? or as an array?
+// export const StyleVar=[
+//      placeholderEmail = "Email",
+//      placeholderPassword = "Password",
+//      placeholderName = "Name"
+// ]
+// module.exports = StyleVar;
+
 export const MainStyles = StyleSheet.create({
     title:{
         fontSize:30,
-        alignSelf: "center"
+        alignSelf: "center",
+        color:"white"
     },
     button:{
         backgroundColor: "green",
@@ -26,7 +30,9 @@ export const MainStyles = StyleSheet.create({
     TextInputBox:{
         height: 40,
         borderColor: 'gray',
-        borderWidth: 1
+        borderWidth: 1,
+        backgroundColor:"white",
+        opacity: 0.5
     },
     image:{
         height:'80%',
@@ -34,6 +40,13 @@ export const MainStyles = StyleSheet.create({
         alignSelf:'center',
         margin:'10%'
     },
+    imageBackground:{
+        flex: 1,
+        justifyContent: "center"
+    },
+    container:{
+        flex:1,
+    }
 
     
 })
