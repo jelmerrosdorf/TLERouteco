@@ -7,7 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import EditAccount from './Screens/editAccountScreen';
 import Login from './Screens/loginScreen';
 import Register from './Screens/registerScreen';
-import { Camera, CameraScreen } from './Screens/Camera';
+import { CameraScreen } from './Screens/CameraScreen';
 import { Gallery } from './Screens/Gallery';
 import {ViewImage} from './Screens/ViewImage';
 
