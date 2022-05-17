@@ -7,7 +7,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import EditAccount from './Screens/editAccountScreen';
 import Login from './Screens/loginScreen';
 import Register from './Screens/registerScreen';
-import { Camera } from './Screens/Camera';
+import { Camera, CameraScreen } from './Screens/Camera';
 import { Gallery } from './Screens/Gallery';
 import {ViewImage} from './Screens/ViewImage';
 
@@ -20,8 +20,8 @@ export default function App() {
       initialRouteName='Login'
       >
         <Stack.Screen
-        name='Camera'
-        component = {Camera}
+        name='CameraScreen'
+        component = {CameraScreen}
         />
         <Stack.Screen
         name='Gallery'
@@ -43,6 +43,7 @@ export default function App() {
         name='EditAccount'
         component = {EditAccount}
         />
+        
       </Stack.Navigator>
     </NavigationContainer>
    
