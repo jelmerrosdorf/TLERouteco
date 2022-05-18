@@ -52,7 +52,15 @@ export const MainStyles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    mapButton:{
+        backgroundColor: "green",
+        height:100,
+        width:'70%',
+        alignSelf: "center",
+        justifyContent:"center",
+        position: "absolute",
+        bottom: 50
     }
-
     
 })
