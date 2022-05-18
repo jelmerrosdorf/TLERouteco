@@ -5,7 +5,7 @@ import { MainStyles } from '../Styles/MainStyles';
 const Register = ({navigation}) =>{  return (
     <View>
       <Text
-      style={MainStyles.TextInputBox}
+      style={MainStyles.title}
       >RoutEco</Text>
       <View>
         <Text
