@@ -1,57 +1,54 @@
 import React from 'react';
 import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { MainStyles } from '../Styles/MainStyles';
+import { blue } from '../Styles/Blue';
+
 
 const EditAccount = ({navigation}) =>{  return (
-    <View>
-      <Text
-      style={MainStyles.title}
-      >RoutEco</Text>
-      <View>
-        <Text
-        style={{
-          alignSelf: "center"
-        }}
-        >Edit your information</Text>
+  
+      <View style={blue.container}>
+        <Text style={blue.title}
+        >RoutEco
+        </Text>
+        <Text style={blue.text}>
+          Edit your account
+        </Text>
+        <TextInput
+          style={blue.TextInput}
+          placeholder={"Name"}
+          />
+        <TextInput
+          style={blue.TextInput}
+          placeholder={"Email"}
+          />
+        <TextInput
+          style={blue.TextInput}
+          placeholder={"Password"}
+          />
+        <TouchableOpacity
+            onPress={()=>{
+              navigation.navigate('Login')
+            }}
+            style={MainStyles.button}
+        >
+          <Text style={MainStyles.buttonText}>
+                      Go to Login
+          </Text>
+        </TouchableOpacity>
+        <Image source={require("../Includes/Images/leafBackground.png")} style={blue.backgroundImage}></Image>
+        <TouchableOpacity
+            onPress={()=>{
+              navigation.navigate('Registrer')
+            }}
+            style={MainStyles.button}
+        >
+          <Text style={MainStyles.buttonText}>
+              Go to registrer
+          </Text>
+        </TouchableOpacity>
       </View>
-      <TextInput
-        style={MainStyles.TextInputBox}
-        placeholder={"Name"}
-        />
-      <TextInput
-        style={MainStyles.TextInputBox}
-        placeholder={"Email"}
-        />
-      <TextInput
-        style={MainStyles.TextInputBox}
-        placeholder={"Password"}
-        />
-      <TouchableOpacity
-                onPress={()=>{
-                    navigation.navigate('Login')
-                }}
-                style={MainStyles.button}
-                >
-                <Text
-                style={MainStyles.buttonText}
-                >
-                    go to Login
-                </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={()=>{
-                    navigation.navigate('Register')
-                }}
-                style={MainStyles.button}
-                >
-                <Text
-                style={MainStyles.buttonText}
-                >
-                    go to Register
-                </Text>
-            </TouchableOpacity>
-    </View>
-  );
-}
+    );
+  }
+
 
 export default EditAccount;
