@@ -7,8 +7,6 @@ import { MainStyles } from '../Styles/MainStyles';
 
 const Map = ({navigation, route}) =>{
     const [location, setLocation] = useState(null);
-    const [longText, setLongText] = useState(null);
-    const [latText, setLatText] = useState(null);
     const[errorMsg, setErrorMsg] = useState(null);
     let longitudeInt = 0
     let latitudeInt = 0
@@ -27,15 +25,14 @@ const Map = ({navigation, route}) =>{
         })();
     }, []);
 
-    let longitudeText
-    let latitudeText
+    
     if(errorMsg){
         text = errorMsg
     }else if(location){
         //update marker coords, rerenders marker on map
         latitudeInt = location.coords.latitude
         longitudeInt = location.coords.longitude
-        console.log("hello")
+        console.log("location detected")
     }
     
     function GetCords(){
@@ -44,15 +41,16 @@ const Map = ({navigation, route}) =>{
             timeout: 5000})
             .then(res => setLocation(res))
         }
-    return (
-
-    <View style={MainStyles.mapContainer}>
-            <MapView style={{
+        function loadLocationCoords(){
+            if(location == null){
+                console.log("location loading")
+            }else{
+               return <MapView style={{
                 width: Dimensions.get('window').width,
                 height: Dimensions.get('window').height}}
                 initialRegion={{
-                    latitude: 51.91742,
-                    longitude: 4.48501,
+                    latitude: location.coords.latitude,
+                    longitude: location.coords.longitude,
                     latitudeDelta: 0.1922,
                     longitudeDelta: 0.1421
                   }}
@@ -68,21 +66,36 @@ const Map = ({navigation, route}) =>{
                 />
                 
             </MapView>
-                    <TouchableOpacity
+           
+                
+            }
+        }
+        function loadCoordsButton(){
+            if(location == null){
+
+            }else{
+                
+                return <TouchableOpacity
                 onPress={()=>{
                   GetCords()
                 }}
                 style={MainStyles.mapButton}
                 >
-                <Text
-                style={MainStyles.buttonText}
-                >
-                    U coordinaten zijn:{"\n"}
-                    longitude :{location.coords.longitude}{"\n"}
-                    latitude :{location.coords.latitude}
-                    
-                </Text>
+                    <Text style={MainStyles.buttonText}>
+                   U coordinaten zijn:{"\n"}
+                   longitude :{location.coords.longitude}{"\n"}
+                   latitude :{location.coords.latitude}
+                   </Text> 
+                
             </TouchableOpacity>
+            }
+        }
+    return (
+
+    <View style={MainStyles.mapContainer}>
+            
+                    {loadLocationCoords()}
+                    {loadCoordsButton()}
             
     </View>
   );
