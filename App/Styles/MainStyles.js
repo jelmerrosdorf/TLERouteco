@@ -11,6 +11,10 @@ import { StyleSheet } from "react-native"
 // module.exports = StyleVar;
 
 export const MainStyles = StyleSheet.create({
+    container:{
+        flex:1,
+        backgroundColor:"#57c276",
+    },
     title:{
         fontSize:30,
         alignSelf: "center",
@@ -44,9 +48,6 @@ export const MainStyles = StyleSheet.create({
         flex: 1,
         justifyContent: "center"
     },
-    container:{
-        flex:1,
-    },
     mapContainer:{
         flex: 1,
         backgroundColor: '#fff',
@@ -64,3 +65,4 @@ export const MainStyles = StyleSheet.create({
     }
     
 })
+//colors blue a9d0e7,green  29a476, yellow f8e9a1
