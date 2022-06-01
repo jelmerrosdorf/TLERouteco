@@ -6,11 +6,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import EditAccount from './Screens/editAccountScreen';
 import Login from './Screens/loginScreen';
-import Register from './Screens/registerScreen';
+import Registrer from './Screens/RegistrerScreen';
 import { CameraScreen } from './Screens/CameraScreen';
 import { Gallery } from './Screens/Gallery';
 import {ViewImage} from './Screens/ViewImage';
 import Map from './Screens/Map';
+import Welcom from './Screens/WelcomScreen';
+
+
 
 const Stack = createStackNavigator();
 
@@ -18,38 +21,31 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-      initialRouteName='Login'
+      initialRouteName='WelcomeScreen'
       >
-        <Stack.Screen
-        name='CameraScreen'
-        component = {CameraScreen}
+        <Stack.Screen name='CameraScreen' component = {CameraScreen}/>
+        <Stack.Screen name='Gallery' component = {Gallery}/>
+         <Stack.Screen name='ViewImage' component = {ViewImage}/>
+        <Stack.Screen name='Registrer' component = {Registrer}/>
+        <Stack.Screen name='Login' component = {Login}
+        options={{
+          headerStyle:{
+            backgroundColor:"#a9d0e7",
+          },
+          headerTintColor:"#24305e"
+        }}
         />
-        <Stack.Screen
-        name='Gallery'
-        component = {Gallery}
-        />
-         <Stack.Screen
-        name='ViewImage'
-        component = {ViewImage}
-        />
-        <Stack.Screen
-        name='Register'
-        component = {Register}
-        />
-        <Stack.Screen
-        name='Login'
-        component = {Login}
-        />
-        <Stack.Screen
-        name='EditAccount'
-        component = {EditAccount}
-        />
+        <Stack.Screen name='EditAccount' component = {EditAccount}/>
        <Stack.Screen
       //  options={{headerShown: false}}
-        name='Map'
-        component = {Map}
+          name='Map'
+          component = {Map}
         />
-        
+         <Stack.Screen 
+          options={{headerShown: false}}
+          name='WelcomeScreen'
+          component = {Welcom}
+        />
       </Stack.Navigator>
     </NavigationContainer>
    
