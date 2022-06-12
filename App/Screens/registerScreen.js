@@ -1,90 +1,130 @@
-import React from 'react';
-import { View, Text, Image, ScrollView, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { useState, useEffect } from 'react'
+import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, Image } from 'react-native'
+import { auth } from '../firebase'
+import { createUserWithEmailAndPassword } from "firebase/auth"
+import { blue } from '../Styles/Blue'
+import { MainStyles } from '../Styles/MainStyles'
 
-const Register = ({navigation}) =>{  return (
-    <View>
-      <Text
-      style={{
-        fontSize:30,
-        alignSelf: "center"
-      }}
-      >RoutEco</Text>
-      <View>
-        <Text
-        style={{
-          alignSelf: "center"
-        }}
-        >Create a new account</Text>
-      </View>
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
-        placeholder={"Name"}
-        />
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          borderWidth: 1
-        }}
-        placeholder={"Email"}
-        />
-      <TextInput
-        style={{
-          height: 40,
-          borderColor: 'gray',
-          
-          borderWidth: 1
-        }}
-        placeholder={"Password"}
-        />
+const RegisterScreen = ({ navigation }) => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    // Automatic login per device
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(user => {
+          if (user) {
+            navigation.replace("Profile")
+          }
+        })
+
+        return unsubscribe
+      }, [])
+
+    return (
+        <KeyboardAvoidingView
+            style={blue.container}
+            behavior="padding"
+        >
+            <Text style={blue.title}>
+                RoutEco
+            </Text>
+            <Text style={blue.text}>
+                Create a new account
+            </Text>
+
+
+            <TextInput
+                placeholder="Email"
+                value={email}
+                onChangeText={text => setEmail(text)}
+                style={blue.TextInput}
+            />
+            <TextInput
+                placeholder="Password"
+                value={password}
+                onChangeText={text => setPassword(text)}
+                style={blue.TextInput}
+                secureTextEntry
+            />
+
             <TouchableOpacity
-                onPress={()=>{
-                    navigation.navigate('Login')
+                onPress={() => {
+                    createUserWithEmailAndPassword(auth, email, password)
+                        .then(userCredentials => {
+                            const user = userCredentials.user;
+                            console.log('Registered with:', user.email);
+                        })
+                        .catch(error => alert(error.message));
+                }
+                }
+                style={MainStyles.button}
+            >
+                <Text style={MainStyles.buttonText}>Register</Text>
+            </TouchableOpacity>
+
+
+            <TouchableOpacity
+                onPress={() => {
+                    navigation.navigate('Home')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                  }}
-                >
-                <Text
-                style={{
-                  alignSelf:"center",
-                  color:"white"
-                }}
-                >
-                    go to Login
+                style={MainStyles.button}
+            >
+                <Text style={MainStyles.buttonText}>
+                    Back to home
                 </Text>
             </TouchableOpacity>
-                  <TouchableOpacity
-                onPress={()=>{
-                    navigation.navigate('EditAccount')
-                }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
-                >
-                <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
-                >
-                    go to account
-                </Text>
-            </TouchableOpacity>
-    </View>
-  );
+
+            <Image source={require("../Includes/Images/leafBackground.png")} style={blue.backgroundImage}></Image>
+
+        </KeyboardAvoidingView>
+    )
 }
 
-export default Register;
+export default RegisterScreen
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    inputContainer: {
+        width: '80%'
+    },
+    input: {
+        backgroundColor: 'white',
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderRadius: 10,
+        marginTop: 5,
+    },
+    buttonContainer: {
+        width: '60%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 40,
+    },
+    button: {
+        backgroundColor: '#0782F9',
+        width: '100%',
+        padding: 15,
+        borderRadius: 10,
+        alignItems: 'center',
+    },
+    buttonOutline: {
+        backgroundColor: 'white',
+        marginTop: 5,
+        borderColor: '#0782F9',
+        borderWidth: 2,
+    },
+    buttonText: {
+        color: 'white',
+        fontWeight: '700',
+        fontSize: 16,
+    },
+    buttonOutlineText: {
+        color: '#0782F9',
+        fontWeight: '700',
+        fontSize: 16,
+    },
+})

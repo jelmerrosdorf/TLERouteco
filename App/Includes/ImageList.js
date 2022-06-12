@@ -11,7 +11,8 @@ const images = [
     {
         id:3,
         source: require("../Includes/Images/leaf3.jpg")
-    },
+    }
 
 ]
+
 module.exports = images;

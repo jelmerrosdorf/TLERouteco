@@ -7,13 +7,13 @@ import { getAuth } from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDQ4HW6r91u7m8G6oC42KMMgkpyb6Vx8BI",
-  authDomain: "reactnativefirebase-d5fb6.firebaseapp.com",
-  projectId: "reactnativefirebase-d5fb6",
-  storageBucket: "reactnativefirebase-d5fb6.appspot.com",
-  messagingSenderId: "620175508272",
-  appId: "1:620175508272:web:a46093feb6c39debebbef5"
-};
+    apiKey: "AIzaSyBeAOJ5TDHYvmIdEjidjCqpjFq3kT3Q8Pk",
+    authDomain: "routeco-a024b.firebaseapp.com",
+    projectId: "routeco-a024b",
+    storageBucket: "routeco-a024b.appspot.com",
+    messagingSenderId: "203849245299",
+    appId: "1:203849245299:web:c50e3ead48ac83dfb58006"
+  };
 
 // Initialize Firebase
 

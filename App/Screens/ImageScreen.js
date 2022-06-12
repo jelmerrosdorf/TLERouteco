@@ -1,38 +1,31 @@
-import { Text, View, TouchableOpacity, Dimensions, Image} from 'react-native';
+import { Text, View, TouchableOpacity, Image} from 'react-native';
+import { MainStyles } from '../Styles/MainStyles';
 
+const ImageScreen = ({navigation, route}) =>{
 
-export const ViewImage = ({navigation, route}) =>{
     const images = require('../Includes/ImageList');
     const { imageId } = route.params;
     let pickedImage;
+
     for (let image of images)
     {
         if (image.id == imageId) {
             pickedImage = image;
         }
     }
+
     return(
         <View>
-
             <TouchableOpacity
                 onPress={()=>{
                     navigation.navigate('Gallery')
                 }}
-                style={{
-                    height:50,
-                    width:'70%',
-                    alignSelf: "center",
-                    backgroundColor:"green",
-                    justifyContent:"center"
-                }}
+                style={MainStyles.button}
                 >
                 <Text
-                style={{
-                    alignSelf:"center",
-                    color:"white"
-                }}
+                style={MainStyles.buttonText}
                 >
-                    go back to gallery
+                    Go back to gallery
                 </Text>
             </TouchableOpacity>
                 <Image 
@@ -46,6 +39,6 @@ export const ViewImage = ({navigation, route}) =>{
                 />
         </View>
     )
-
-
 }
+
+export default ImageScreen
