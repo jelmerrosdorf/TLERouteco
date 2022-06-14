@@ -6,7 +6,7 @@ const textColor = "#24305e"
 const backgroundColor ="#a9d0e7"
 const textColorRed = "#f77670"
 const inputFieldBackground = "#f8e9a1" 
-
+//give min and max sizes, rn everything move when keyboard opens
 export const blue = StyleSheet.create({
     container:{
         flex:1,
@@ -68,7 +68,6 @@ export const blue = StyleSheet.create({
         margin:10,
         textAlign:"center",
         fontStyle:"italic",
-        color:textColorRed
     },
 
 })
