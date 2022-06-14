@@ -16,14 +16,17 @@ const EditAccount = ({navigation}) =>{  return (
         <TextInput
           style={blue.TextInput}
           placeholder={"Name"}
+          placeholderTextColor={"#f77670"}
           />
         <TextInput
           style={blue.TextInput}
           placeholder={"Email"}
+          placeholderTextColor={"#f77670"}
           />
         <TextInput
           style={blue.TextInput}
           placeholder={"Password"}
+          placeholderTextColor={"#f77670"}
           />
         <TouchableOpacity
             onPress={()=>{
