@@ -16,6 +16,7 @@ export const CameraScreen = ({navigation, route}) =>{
           const data = await camera.takePictureAsync(null);
           console.log(data.uri)
           setPicture(data.uri)
+          navigation.navigate('ModelScreen',{ imageUri:data.uri})
         }
     } 
     useEffect(() => {
