@@ -1,4 +1,6 @@
 import React, {useState, useEffect }from 'react';
+import * as tf from '@tensorflow/tfjs'
+import '@tensorflow/tfjs-react-native';
 import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
 import MapView, { Marker, Polyline } from 'react-native-maps';
 import * as Location from 'expo-location';
